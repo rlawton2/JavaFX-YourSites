@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="420.0" prefWidth="623.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yoursites.YourSitesController">
+   <children>
+      <ImageView fitHeight="64.0" fitWidth="623.0" pickOnBounds="true">
+         <image>
+            <Image url="@banner.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="bannerTextLabel" alignment="CENTER" layoutX="162.0" layoutY="9.0" prefHeight="46.0" prefWidth="271.0" text="Your Sites" textAlignment="CENTER">
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+         <font>
+            <Font name="Tahoma" size="36.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="newsRButton" layoutX="98.0" layoutY="84.0" mnemonicParsing="false" onAction="#selectionGroupListener" selected="true" text="News">
+         <toggleGroup>
+            <ToggleGroup fx:id="selectionGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="sportsRButton" layoutX="182.0" layoutY="84.0" mnemonicParsing="false" onAction="#selectionGroupListener" text="Sports" toggleGroup="$selectionGroup" />
+      <RadioButton fx:id="techRButton" layoutX="268.0" layoutY="84.0" mnemonicParsing="false" onAction="#selectionGroupListener" text="Tech" toggleGroup="$selectionGroup" />
+      <RadioButton fx:id="codingRButton" layoutX="342.0" layoutY="84.0" mnemonicParsing="false" onAction="#selectionGroupListener" text="Coding" toggleGroup="$selectionGroup" />
+      <RadioButton fx:id="miscRButton" layoutX="433.0" layoutY="84.0" mnemonicParsing="false" onAction="#selectionGroupListener" text="Misc." toggleGroup="$selectionGroup" />
+      <ComboBox fx:id="comboBox" layoutX="207.0" layoutY="139.0" onAction="#comboBoxSelectionListener" prefHeight="31.0" prefWidth="195.0" />
+      <Label fx:id="messageLabel" alignment="CENTER" layoutX="107.0" layoutY="210.0" prefHeight="31.0" prefWidth="395.0" style="-fx-text-fill: red;" text="This will be the message box" />
+   </children>
+</AnchorPane>
